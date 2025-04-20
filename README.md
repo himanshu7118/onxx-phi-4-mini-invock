@@ -110,18 +110,5 @@ Streamlit
 
 Python 3.10+
 
-📄 License
-This project is licensed under the MIT License © 2025 Your Name
-
-🙌 Acknowledgements
-
-Special thanks to:
-
-Microsoft for releasing Phi-4-mini
-
-ONNX team for ONNX Runtime GenAI
-
-Streamlit for a powerful UI toolkit
-
-Olive for model optimization tools
-
+### 📄 License
+This project is licensed under the MIT License © 2025 Himanshu Rami
