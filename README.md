@@ -21,9 +21,10 @@ Follow these steps to get everything running locally.
 
 ---
 
-### 1. 📁 Create Your Project Directory
+### steps to follow: 
 
-```bash
+1. 📁 Create Your Project Directory
+
 mkdir phi4-intent-assistant
 cd phi4-intent-assistant
 
