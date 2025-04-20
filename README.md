@@ -93,7 +93,7 @@ streamlit run app.py
    
 - This assistant is designed to identify and manage user intents in an intelligent way:
 
-Each assistant response is formatted with <intent>, <context>, and <response> tags.
+- Each assistant response is formatted with intent, context, and response xml tags.
 
 Answer:
 ```bash
