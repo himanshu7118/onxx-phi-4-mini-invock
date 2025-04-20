@@ -92,7 +92,7 @@ streamlit run app.py
 6. 🤖 Intent-Based Session Handling Logic
 This assistant is designed to identify and manage user intents in an intelligent way:
 
-1. Intent Extraction
+* Intent Extraction
 Each assistant response is formatted with <intent>, <context>, and <response> tags.
 
 Then open your browser and go to http://localhost:8501.
@@ -104,7 +104,7 @@ Answer:
 <response>Here's how to read a file in Python using ...</response>
 ```
 
-2.  Intent Comparison
+* Intent Comparison
 The model checks if the current message's intent is semantically similar to the last one by prompting itself:
 
 ```bash
