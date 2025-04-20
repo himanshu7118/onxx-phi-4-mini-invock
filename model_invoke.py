@@ -5,7 +5,7 @@ import os
 import time
 import psutil
 
-model_folder = "/home/himanshu.r@simform.dom/Downloads/misc phi-4/onxx-phi-4-mini-code/phi4-mini-optimized/model"
+model_folder = "./phi4-mini-optimized/model"
 
 model = og.Model(model_folder)
 
