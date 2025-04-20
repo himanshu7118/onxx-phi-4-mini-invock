@@ -30,9 +30,6 @@ cd phi4-intent-assistant
 2. 🧠 Load and Save the Hugging Face Model
 Save the following as download_model.py:
 
-python
-Copy
-Edit
 from transformers import AutoTokenizer, AutoModelForCausalLM, logging
 
 # Enable logging
@@ -50,26 +47,20 @@ model = AutoModelForCausalLM.from_pretrained("microsoft/Phi-4-mini-instruct", tr
 model.save_pretrained(local_dir)
 
 print("Model and tokenizer saved to", local_dir)
-Then run:
 
-bash
-Copy
-Edit
+Then run:
 python download_model.py
+
 3. 📦 Install Required Libraries
-bash
-Copy
-Edit
+
 pip install olive-ai
 pip install transformers
 pip install --pre onnxruntime-genai
 pip install streamlit
+
 4. ⚙️ Optimize the Model Using Olive
 This command will convert and optimize the model using ONNX Runtime GenAI:
 
-bash
-Copy
-Edit
 olive auto-opt \
   --model_name_or_path ./phi4-mini \
   --output_path ./phi4-mini-optimized \
@@ -78,18 +69,16 @@ olive auto-opt \
   --precision int4 \
   --use_model_builder \
   --log_level 1
+
 5. 💬 Create the Streamlit App
 Save the following as app.py:
 
-python
-Copy
-Edit
 import streamlit as st
 import onnxruntime_genai as og
 import time
 
 # Load model and tokenizer
-model_folder = "./phi4-mini-optimized/model"
+model_folder = "./phi4-mini-optimized/model" # your model system path where your model saves after the step-4 completion
 model = og.Model(model_folder)
 tokenizer = og.Tokenizer(model)
 tokenizer_stream = tokenizer.create_stream()
@@ -136,7 +125,7 @@ def generate_response(user_input):
     generator.append_tokens(input_tokens)
 
     response = ""
-    token_count = 0
+    token_count = 0Let me know if you'd like to add badges (e.g., license, Hugging Face, Streamlit app demo), or want me to push this to your repo directly.
     start_time = time.time()
 
     while not generator.is_done():
@@ -180,17 +169,14 @@ if st.button("🧹 Clear Chat History"):
 
 st.markdown("---")
 st.markdown("_Powered by Phi-4-mini, ONNX Runtime GenAI, and Streamlit_")
+
 6. 🚀 Run the App
-bash
-Copy
-Edit
+
 streamlit run app.py
+
 Then open your browser and go to http://localhost:8501.
 
 🧠 Example Output
-json
-Copy
-Edit
 <|user|> What are some beginner projects in Python?
 </s>
 <|assistant|> 
@@ -199,6 +185,7 @@ Edit
   "context": "Likely a new learner looking for hands-on coding experience.",
   "response": "You can start with a to-do list app, a simple calculator, or a weather info CLI tool using an API like OpenWeather."
 }
+
 🧠 Tech Stack
 microsoft/Phi-4-mini-instruct
 
@@ -214,6 +201,7 @@ Python 3.10+
 This project is licensed under the MIT License © 2025 Your Name
 
 🙌 Acknowledgements
+
 Special thanks to:
 
 Microsoft for releasing Phi-4-mini
@@ -224,10 +212,3 @@ Streamlit for a powerful UI toolkit
 
 Olive for model optimization tools
 
-yaml
-Copy
-Edit
-
----
-
-Let me know if you'd like to add badges (e.g., license, Hugging Face, Streamlit app demo), or want me to push this to your repo directly.
