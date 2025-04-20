@@ -123,7 +123,9 @@ Respond with a single word: "yes" or "no".
 7. 🧼 Clear Chat
 You can reset the entire conversation history using the Clear All Chats button.
 
-### 🧠 Example Output
+### 🧠 Example Output 
+
+```bash
 <|user|> What are some beginner projects in Python?
 </s>
 <|assistant|> 
@@ -132,6 +134,8 @@ You can reset the entire conversation history using the Clear All Chats button.
   "context": "Likely a new learner looking for hands-on coding experience.",
   "response": "You can start with a to-do list app, a simple calculator, or a weather info CLI tool using an API like OpenWeather."
 }
+```
+
 
 ### 🧠 Tech Stack
 microsoft/Phi-4-mini-instruct
