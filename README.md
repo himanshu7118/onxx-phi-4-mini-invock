@@ -25,12 +25,15 @@ Follow these steps to get everything running locally.
 
 1. 📁 Create Your Project Directory
 
+```bash
 mkdir phi4-intent-assistant
 cd phi4-intent-assistant
+```
 
 2. 🧠 Load and Save the Hugging Face Model
 Save the following as download_model.py:
 
+```bash
 from transformers import AutoTokenizer, AutoModelForCausalLM, logging
 
 # Enable logging
@@ -48,20 +51,26 @@ model = AutoModelForCausalLM.from_pretrained("microsoft/Phi-4-mini-instruct", tr
 model.save_pretrained(local_dir)
 
 print("Model and tokenizer saved to", local_dir)
+```
 
 Then run:
+```bash
 python download_model.py
+```
 
 3. 📦 Install Required Libraries
 
+```bash
 pip install olive-ai
 pip install transformers
 pip install --pre onnxruntime-genai
 pip install streamlit
+```
 
 4. ⚙️ Optimize the Model Using Olive
 This command will convert and optimize the model using ONNX Runtime GenAI:
 
+```bash
 olive auto-opt \
   --model_name_or_path ./phi4-mini \
   --output_path ./phi4-mini-optimized \
@@ -70,9 +79,12 @@ olive auto-opt \
   --precision int4 \
   --use_model_builder \
   --log_level 1
+```
 
 5. 💬 Create the Streamlit App
 Save the following as app.py:
+
+```bash
 
 import streamlit as st
 import onnxruntime_genai as og
@@ -170,10 +182,13 @@ if st.button("🧹 Clear Chat History"):
 
 st.markdown("---")
 st.markdown("_Powered by Phi-4-mini, ONNX Runtime GenAI, and Streamlit_")
+```
 
 6. 🚀 Run the App
 
+```bash
 streamlit run app.py
+```
 
 Then open your browser and go to http://localhost:8501.
 
