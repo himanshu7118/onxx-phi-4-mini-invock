@@ -91,11 +91,9 @@ streamlit run app.py
 
 6. 🤖 Intent-Based Session Handling Logic:
    
-This assistant is designed to identify and manage user intents in an intelligent way:
+- This assistant is designed to identify and manage user intents in an intelligent way:
 
-- Intent Extraction
-
-* Each assistant response is formatted with <intent>, <context>, and <response> tags.
+Each assistant response is formatted with <intent>, <context>, and <response> tags.
 
 Answer:
 ```bash
@@ -129,11 +127,9 @@ You can reset the entire conversation history using the Clear All Chats button.
 <|user|> What are some beginner projects in Python?
 </s>
 <|assistant|> 
-{
-  "intent": "User is seeking beginner project ideas for learning Python.",
-  "context": "Likely a new learner looking for hands-on coding experience.",
-  "response": "You can start with a to-do list app, a simple calculator, or a weather info CLI tool using an API like OpenWeather."
-}
+<intent>Ask for Python help</intent>
+<context>User is likely a beginner working with file I/O</context>
+<response>Here's how to read a file in Python using ...</response>
 ```
 
 
