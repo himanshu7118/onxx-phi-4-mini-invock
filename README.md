@@ -89,7 +89,7 @@ streamlit run app.py
 
 Then open your browser and go to http://localhost:8501.
 
-🧠 Example Output
+### 🧠 Example Output
 <|user|> What are some beginner projects in Python?
 </s>
 <|assistant|> 
@@ -99,7 +99,7 @@ Then open your browser and go to http://localhost:8501.
   "response": "You can start with a to-do list app, a simple calculator, or a weather info CLI tool using an API like OpenWeather."
 }
 
-🧠 Tech Stack
+### 🧠 Tech Stack
 microsoft/Phi-4-mini-instruct
 
 ONNX Runtime GenAI
