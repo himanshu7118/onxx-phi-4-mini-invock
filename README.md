@@ -89,13 +89,13 @@ olive auto-opt \
 streamlit run app.py
 ```
 
-6. 🤖 Intent-Based Session Handling Logic
+6. 🤖 Intent-Based Session Handling Logic:
+   
 This assistant is designed to identify and manage user intents in an intelligent way:
 
 * Intent Extraction
-Each assistant response is formatted with <intent>, <context>, and <response> tags.
 
-Then open your browser and go to http://localhost:8501.
+Each assistant response is formatted with <intent>, <context>, and <response> tags.
 
 Answer:
 ```bash
