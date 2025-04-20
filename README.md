@@ -93,9 +93,9 @@ streamlit run app.py
    
 This assistant is designed to identify and manage user intents in an intelligent way:
 
-* Intent Extraction
+- Intent Extraction
 
-Each assistant response is formatted with <intent>, <context>, and <response> tags.
+* Each assistant response is formatted with <intent>, <context>, and <response> tags.
 
 Answer:
 ```bash
@@ -104,7 +104,7 @@ Answer:
 <response>Here's how to read a file in Python using ...</response>
 ```
 
-* Intent Comparison
+- Intent Comparison
 The model checks if the current message's intent is semantically similar to the last one by prompting itself:
 
 ```bash
@@ -114,11 +114,11 @@ Intent B: [new_intent]
 Respond with a single word: "yes" or "no".
 ```
 
-If the model returns "yes", the conversation continues in the same window.
+* If the model returns "yes", the conversation continues in the same window.
 
-If "no", the current chat window is cleared and a new chat session is started.
+* If "no", the current chat window is cleared and a new chat session is started.
 
-This ensures each chat window is focused on a single coherent intent.
+* This ensures each chat window is focused on a single coherent intent.
 
 7. 🧼 Clear Chat
 You can reset the entire conversation history using the Clear All Chats button.
