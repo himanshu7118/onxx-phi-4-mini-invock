@@ -6,13 +6,15 @@ An intelligent AI assistant powered by Microsoft's `Phi-4-mini-instruct` model. 
 
 ## 📌 Features
 
-- ✅ Local model inference (no API key required)
-- 🧠 Intent and context extraction
-- ⚡ Low-latency response generation
+- 🧠 Identifies user **intent** and **context** in every message.
+- ✅ Responses are formatted in structured **XML** for clarity.
+- ✅ **Intent-aware session management**:
+  - If the current intent is **similar** to the previous one, the chat continues in the **same window**.
+  - If the current intent is **different**, a **new chat window** is started and the previous one is cleared.
+- ✅ Response latency tracking for performance measurement.
 - 🪄 ONNX Runtime GenAI acceleration
 - 🖥️ Clean, interactive UI with Streamlit
-- 🧩 JSON-formatted answers for easy integration
-
+- ✅ Option to clear all chat history.
 ---
 
 ## 🛠️ Setup Instructions
@@ -87,7 +89,39 @@ olive auto-opt \
 streamlit run app.py
 ```
 
+6. 🤖 Intent-Based Session Handling Logic
+This assistant is designed to identify and manage user intents in an intelligent way:
+
+1. Intent Extraction
+Each assistant response is formatted with <intent>, <context>, and <response> tags.
+
 Then open your browser and go to http://localhost:8501.
+
+Answer:
+```bash
+<intent>Ask for Python help</intent>
+<context>User is likely a beginner working with file I/O</context>
+<response>Here's how to read a file in Python using ...</response>
+```
+
+2.  Intent Comparison
+The model checks if the current message's intent is semantically similar to the last one by prompting itself:
+
+```bash
+Determine whether the following two intents are semantically the same.
+Intent A: [last_intent]
+Intent B: [new_intent]
+Respond with a single word: "yes" or "no".
+```
+
+If the model returns "yes", the conversation continues in the same window.
+
+If "no", the current chat window is cleared and a new chat session is started.
+
+This ensures each chat window is focused on a single coherent intent.
+
+7. 🧼 Clear Chat
+You can reset the entire conversation history using the Clear All Chats button.
 
 ### 🧠 Example Output
 <|user|> What are some beginner projects in Python?
